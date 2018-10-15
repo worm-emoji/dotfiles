@@ -8,6 +8,7 @@ set TODODIR /Volumes/GoogleDrive/My\ Drive/todo
 set NOTESDIR /Volumes/GoogleDrive/My\ Drive/notes
 set PRDIR /Volumes/GoogleDrive/My\ Drive/prs
 set PATH /Users/ylukem/stripe/henson/bin /Users/ylukem/stripe/space-commander/bin /Users/ylukem/stripe/password-vault/bin /Users/ylukem/.rbenv/bin /Users/ylukem/.rbenv/shims /Users/ylukem/stripe/henson/bin /usr/local/bin /usr/local/bin /usr/bin /bin /usr/sbin /sbin /usr/local/MacGPG2/bin /usr/local/munki "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" $PATH
+set PATH /Users/ylukem/shortcuts $PATH
 
 function todo
     vi $TODODIR/(date +'%Y-%m-%d').txt
