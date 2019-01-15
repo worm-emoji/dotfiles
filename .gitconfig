@@ -12,6 +12,7 @@
 # http://stackoverflow.com/questions/18257622/why-is-git-core-preloadindex-default-value-false
 [core]
         preloadindex = true
+	ignorecase = false
 [alias]
 	b = browse
 	branch-name = "!git rev-parse --abbrev-ref HEAD"
@@ -21,3 +22,5 @@
 	npr = "pull-request"
 [hub]
 	host = git.corp.stripe.com
+[pull]
+	rebase = true
