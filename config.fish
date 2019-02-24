@@ -2,12 +2,17 @@ alias git hub
 alias grep rg
 alias c code
 alias gst "git status"
-set GOPATH /Users/ylukem/go
+set GOPATH /Users/$USER/go
 set PATH $GOPATH $PATH
 set PRDIR /Volumes/GoogleDrive/My\ Drive/prs
 set TODODIR /Volumes/GoogleDrive/My\ Drive/todo
 set NOTESDIR /Volumes/GoogleDrive/My\ Drive/notes
-set PATH /Users/ylukem/stripe/henson/bin /Users/ylukem/stripe/space-commander/bin /Users/ylukem/stripe/password-vault/bin /Users/ylukem/.rbenv/bin /Users/ylukem/.rbenv/shims /Users/ylukem/stripe/henson/bin /usr/local/bin /usr/local/bin /usr/bin /bin /usr/sbin /sbin /usr/local/MacGPG2/bin /usr/local/munki "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" $PATH
+set PATH /usr/local/bin /usr/local/bin /usr/bin /bin /usr/sbin /sbin "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" $PATH
+
+
+if test "$USER" = "ylukem"
+    set PATH /Users/$USER/stripe/henson/bin /Users/$USER/stripe/space-commander/bin /Users/$USER/stripe/password-vault/bin /Users/$USER/.rbenv/bin /Users/$USER/.rbenv/shims /Users/$USER/stripe/henson/bin /usr/local/MacGPG2/bin /usr/local/munki  $PATH
+end
 
 abbr --add g git
 
