@@ -9,15 +9,15 @@ set TODODIR /Volumes/GoogleDrive/My\ Drive/todo
 set NOTESDIR /Volumes/GoogleDrive/My\ Drive/notes
 set PATH /usr/local/bin /usr/local/bin /usr/bin /bin /usr/sbin /sbin "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" $PATH
 
-
 if test "$USER" = "ylukem"
     set PATH /Users/$USER/stripe/henson/bin /Users/$USER/stripe/space-commander/bin /Users/$USER/stripe/password-vault/bin /Users/$USER/.rbenv/bin /Users/$USER/.rbenv/shims /Users/$USER/stripe/henson/bin /usr/local/MacGPG2/bin /usr/local/munki  $PATH
+    status --is-interactive; and source (rbenv init -|psub)
 end
 
 abbr --add g git
 
 function todo
-    vi $TODODIR/(date +'%Y-%m-%d').txt
+    vi $TODODIR/(date +'%Y-%m-%d').md
 end
 
 function newpr
@@ -29,11 +29,11 @@ function newpr
 end
 
 function todo-yesterday
-    mdless $TODODIR/(date -v '-1d' +'%Y-%m-%d').txt
+    mdless $TODODIR/(date -v '-1d' +'%Y-%m-%d').md
 end
 
 function todo-tomorrow
-  vi $TODODIR/(date -v '+1d' +'%Y-%m-%d').txt
+  vi $TODODIR/(date -v '+1d' +'%Y-%m-%d').md
 end
 
 function f
