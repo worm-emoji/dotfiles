@@ -9,7 +9,7 @@ set TODODIR /Volumes/GoogleDrive/My\ Drive/todo
 set NOTESDIR /Volumes/GoogleDrive/My\ Drive/notes
 set PATH /usr/local/bin /usr/local/bin /usr/bin /bin /usr/sbin /sbin "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" $PATH
 
-if test "$USER" = "ylukem"
+if test "$WORKLAPTOP" = "1"
     set PATH /Users/$USER/stripe/henson/bin /Users/$USER/stripe/space-commander/bin /Users/$USER/stripe/password-vault/bin /Users/$USER/.rbenv/bin /Users/$USER/.rbenv/shims /Users/$USER/stripe/henson/bin /usr/local/MacGPG2/bin /usr/local/munki  $PATH
     status --is-interactive; and source (rbenv init -|psub)
 end
