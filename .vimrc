@@ -1,4 +1,4 @@
-set tw=69
+set tw=68
 set wrap
 set expandtab
 set autoindent
