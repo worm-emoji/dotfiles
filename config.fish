@@ -1,18 +1,18 @@
 alias git hub
 alias grep rg
 alias c code
+alias s ddgr
 alias gst "git status"
 set GOPATH /Users/$USER/go
 set PATH $GOPATH $PATH
 set PRDIR /Volumes/GoogleDrive/My\ Drive/prs
 set TODODIR /Volumes/GoogleDrive/My\ Drive/todo
 set NOTESDIR /Volumes/GoogleDrive/My\ Drive/notes
-set PATH /usr/local/bin /usr/local/bin /usr/bin /bin /usr/sbin /sbin "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" $PATH
+set PATH /usr/local/bin /usr/local/bin /usr/bin /bin /usr/sbin /sbin "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" /Users/ylukem/.cargo/bin $PATH
 
-if test "$WORKLAPTOP" = "1"
-    set PATH /Users/$USER/stripe/henson/bin /Users/$USER/stripe/space-commander/bin /Users/$USER/stripe/password-vault/bin /Users/$USER/.rbenv/bin /Users/$USER/.rbenv/shims /Users/$USER/stripe/henson/bin /usr/local/MacGPG2/bin /usr/local/munki  $PATH
-    status --is-interactive; and source (rbenv init -|psub)
-end
+source (rbenv init -|psub)
+source $HOME/stripe/space-commander/bin/sc-env-activate.fish
+functions -e fish_right_prompt
 
 abbr --add g git
 
