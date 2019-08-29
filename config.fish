@@ -2,6 +2,7 @@ alias git hub
 alias grep rg
 alias c code
 alias s ddgr
+alias ci "hub ci-status"
 alias gst "git status"
 set GOPATH /Users/$USER/go
 set PATH $GOPATH $PATH
