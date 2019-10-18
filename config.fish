@@ -1,8 +1,8 @@
 alias git hub
+alias weather "curl https://v2.wttr.in/u"
 alias grep rg
 alias c code
 alias s ddgr
-alias ci "hub ci-status"
 alias gst "git status"
 set GOPATH /Users/$USER/go
 set PATH $GOPATH $PATH
@@ -11,6 +11,7 @@ set TODODIR /Volumes/GoogleDrive/My\ Drive/todo
 set NOTESDIR /Volumes/GoogleDrive/My\ Drive/notes
 set PATH /usr/local/bin /usr/local/bin /usr/bin /bin /usr/sbin /sbin "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" /Users/ylukem/.cargo/bin $PATH
 
+source (nodenv init -|psub)
 source (rbenv init -|psub)
 source $HOME/stripe/space-commander/bin/sc-env-activate.fish
 functions -e fish_right_prompt
