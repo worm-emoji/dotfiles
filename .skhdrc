@@ -218,3 +218,7 @@ cmd + alt - g : toggle-grayscale
 cmd + shift - 9 : /usr/bin/osascript -e 'do shell script "killall coreaudiod 2>&1" with administrator privileges'
 ctrl + alt - w : chunkc tiling::desktop --deserialize ~/.chunkwm_layouts/dev_1
 cmd + shift - 0 : brew services restart chunkwm
+
+.blacklist [
+    "simulator"
+]

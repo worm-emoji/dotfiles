@@ -9,17 +9,22 @@ set PATH $GOPATH $PATH
 set PRDIR /Volumes/GoogleDrive/My\ Drive/prs
 set TODODIR /Volumes/GoogleDrive/My\ Drive/todo
 set NOTESDIR /Volumes/GoogleDrive/My\ Drive/notes
-set PATH /usr/local/bin /usr/local/bin /usr/bin /bin /usr/sbin /sbin "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" /Users/ylukem/.cargo/bin $PATH
-
-source (nodenv init -|psub)
-source (rbenv init -|psub)
-source $HOME/stripe/space-commander/bin/sc-env-activate.fish
-functions -e fish_right_prompt
+set JOURNALDIR /Users/lukemiles/Library/Mobile\ Documents/iCloud~posting/Documents
+set PATH /usr/local/bin /usr/local/bin /usr/bin /bin /usr/sbin /sbin "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" /Users/lukemiles/.cargo/bin $PATH
 
 abbr --add g git
 
+function flac2mp3
+    for file in *.flac; ffmpeg -i "$file" -aq 0 (string replace -r '\.flac$' .mp3 $file) ; end; mkdir -p flac; mv *.flac flac
+end
+
 function todo
     vi $TODODIR/(date +'%Y-%m-%d').md
+end
+
+function j
+   echo \n\n"## ["(date +'%H:%M')"]"\n\n >> $JOURNALDIR/(date +'%Y-%m-%d').md
+   vi '+normal G$' +startinsert $JOURNALDIR/(date +'%Y-%m-%d').md
 end
 
 function newpr
