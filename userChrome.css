@@ -1,0 +1,92 @@
+/*Remove circle, background and padding from back button */
+:root:not([uidensity="compact"]) #back-button > .toolbarbutton-icon {
+  background-color: unset !important;
+  border: unset !important;
+  padding: var(--toolbarbutton-inner-padding) !important;
+  border-radius: var(--toolbarbutton-border-radius) !important;
+  width: calc(2 * var(--toolbarbutton-inner-padding) + 16px) !important;
+}
+
+:root:not([uidensity="compact"])
+  #back-button:hover:not([disabled])
+  > .toolbarbutton-icon {
+  background-color: var(--toolbarbutton-hover-background) !important;
+}
+:root:not([uidensity="compact"])
+  #back-button:active:not([disabled])
+  > .toolbarbutton-icon {
+  background-color: var(
+    --toolbarbutton-active-background
+  ) !important; /* Hover and Active states to mimic other buttons */
+}
+
+:root:not([uidensity="compact"]) #back-button {
+  padding-inline-start: 3px !important; /* Remove pre-padding */
+}
+
+/* Remove "Send Page to Device", "Send Link to Device" */
+#context-sendpagetodevice,
+#context-sep-sendpagetodevice,
+#context-sendlinktodevice,
+#context-sep-sendlinktodevice,
+#context_sendTabToDevice,
+#context_sendTabToDevice_separator {
+  display: none !important;
+}
+
+/* Sane padding & font size for the sidebar header */
+#sidebar-header {
+  padding: 4px !important;
+}
+#sidebar-title {
+  font-size: 12px;
+}
+
+#TabsToolbar,
+#nav-bar,
+#navigator-toolbox,
+#nav-bar {
+  -moz-appearance: none !important;
+}
+
+.tabbrowser-tab {
+  visibility: hidden !important;
+}
+
+.tabbrowser-arrowscrollbox > * {
+  background-image: none !important; /* shadow fix */
+}
+
+#navigator-toolbox {
+  background: var(--toolbar-bgcolor);
+}
+.browser-toolbar:not(.titlebar-color) {
+  background: none !important;
+}
+
+.titlebar-spacer {
+  display: none;
+}
+
+#main-window[privatebrowsingmode] #nav-bar {
+  margin-left: 97px;
+}
+
+#TabsToolbar .toolbar-items {
+  background: white !important;
+  visibility: collapse;
+} /* hide JUST the tabs, leaving JUST the window controls */
+#TabsToolbar {
+  -moz-appearance: white !important;
+  margin-bottom: -42px; /* push window controls down into same vertical space as the nav-bar */
+  height: 42px; /* make the window controls roughly the same height as the nav-bar */
+}
+#nav-bar {
+  margin-left: 75px; /* push nav-bar to the right to make space for the window controls -- */
+  background: transparent !important; /* optional -make nav-bar background look the same as the window controls background */
+}
+
+.titlebar-buttonbox-container {
+  /* added for compact theme*/
+  margin-top: -8px;
+}
