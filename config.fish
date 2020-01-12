@@ -9,7 +9,7 @@ set PATH $GOPATH $PATH
 set PRDIR /Volumes/GoogleDrive/My\ Drive/prs
 set TODODIR /Volumes/GoogleDrive/My\ Drive/todo
 set NOTESDIR /Volumes/GoogleDrive/My\ Drive/notes
-set JOURNALDIR /Users/lukemiles/Library/Mobile\ Documents/iCloud~posting/Documents
+set JOURNALDIR /Users/$USER/Library/Mobile\ Documents/iCloud~posting/Documents
 set PATH /usr/local/bin /usr/local/bin /usr/bin /bin /usr/sbin /sbin "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" /Users/lukemiles/.cargo/bin $PATH
 
 abbr --add g git
