@@ -7,7 +7,7 @@ alias gst "git status"
 set GOPATH /Users/$USER/go
 set PATH $GOPATH $PATH
 set PRDIR /Volumes/GoogleDrive/My\ Drive/prs
-set TODODIR /Volumes/GoogleDrive/My\ Drive/todo
+set TODODIR "/Users/$USER/Library/Mobile Documents/com~apple~CloudDocs"
 set NOTESDIR /Volumes/GoogleDrive/My\ Drive/notes
 set JOURNALDIR /Users/$USER/Library/Mobile\ Documents/iCloud~posting/Documents
 set PATH /usr/local/bin /usr/local/bin /usr/bin /bin /usr/sbin /sbin "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" /Users/lukemiles/.cargo/bin $PATH
@@ -19,12 +19,20 @@ function flac2mp3
 end
 
 function todo
-    vi $TODODIR/(date +'%Y-%m-%d').md
+    vi '+normal G$' +startinsert $TODODIR/todo.md
 end
 
 function j
    echo \n\n"## ["(date +'%H:%M')"]"\n\n >> $JOURNALDIR/(date +'%Y-%m-%d').md
    vi '+normal G$' +startinsert $JOURNALDIR/(date +'%Y-%m-%d').md
+end
+
+function jo
+  vi $JOURNALDIR/(date +'%Y-%m-%d').md
+end
+
+function jv
+  cat $JOURNALDIR/(date +'%Y-%m-%d').md
 end
 
 function newpr
