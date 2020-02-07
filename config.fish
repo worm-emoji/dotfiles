@@ -5,9 +5,9 @@ alias c code
 alias s ddgr
 alias gst "git status"
 set GOPATH /Users/$USER/go
-set PATH $GOPATH $PATH
+set PATH $GOPATH/bin $PATH
 set PRDIR /Volumes/GoogleDrive/My\ Drive/prs
-set TODODIR "/Users/$USER/Library/Mobile Documents/com~apple~CloudDocs"
+set TODODIR "/Users/$USER/Dropbox"
 set NOTESDIR /Volumes/GoogleDrive/My\ Drive/notes
 set JOURNALDIR /Users/$USER/Library/Mobile\ Documents/iCloud~posting/Documents
 set PATH /usr/local/bin /usr/local/bin /usr/bin /bin /usr/sbin /sbin "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" /Users/lukemiles/.cargo/bin $PATH
@@ -19,7 +19,7 @@ function flac2mp3
 end
 
 function todo
-    vi '+normal G$' +startinsert $TODODIR/todo.md
+    vi +startinsert $TODODIR/todo.md
 end
 
 function j
@@ -172,3 +172,6 @@ function iterm2_fish_prompt --description 'Write out the prompt'
 
     set_color normal
 end
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/ylukem/Downloads/google-cloud-sdk/path.fish.inc' ]; . '/Users/ylukem/Downloads/google-cloud-sdk/path.fish.inc'; end

@@ -13,6 +13,7 @@
 [core]
         preloadindex = true
 	ignorecase = false
+	excludesfile = /Users/ylukem/.gitignore_global
 [alias]
 	b = browse
 	branch-name = "!git rev-parse --abbrev-ref HEAD"
