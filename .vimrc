@@ -1,2 +1,5 @@
-autocmd BufRead,BufNewFile *PULLREQ_EDITMSG setlocal tw=69 wrap filetype=md  
-autocmd FileType md setlocal expandtab autoindent tabstop=2
+autocmd BufRead,BufNewFile *PULLREQ_EDITMSG setlocal tw=69 wrap filetype=md 
+
+set expandtab
+set autoindent
+set tabstop=2

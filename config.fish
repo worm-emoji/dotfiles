@@ -11,8 +11,9 @@ set TODODIR "/Users/$USER/Dropbox"
 set NOTESDIR /Volumes/GoogleDrive/My\ Drive/notes
 set JOURNALDIR /Users/$USER/Library/Mobile\ Documents/iCloud~posting/Documents
 set PATH /usr/local/bin /usr/local/bin /usr/bin /bin /usr/sbin /sbin "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" /Users/lukemiles/.cargo/bin $PATH
+set EDITOR vi
 
-abbr --add g git
+abbr --add gco "git co -b ylukem/"
 
 function flac2mp3
     for file in *.flac; ffmpeg -i "$file" -aq 0 (string replace -r '\.flac$' .mp3 $file) ; end; mkdir -p flac; mv *.flac flac
