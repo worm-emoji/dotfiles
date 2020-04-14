@@ -1,3 +1,4 @@
+. ~/.config/fish/z.fish
 alias git hub
 alias weather "curl https://v2.wttr.in/u"
 alias grep rg
@@ -171,7 +172,8 @@ function iterm2_fish_prompt --description 'Write out the prompt'
 
     echo -n "$suffix "
 
-    set_color normal
+    set_color normal 
+    z --add "$PWD"
 end
 
 # The next line updates PATH for the Google Cloud SDK.
