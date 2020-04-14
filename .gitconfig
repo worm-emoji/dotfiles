@@ -18,7 +18,7 @@
 	b = browse
 	branch-name = "!git rev-parse --abbrev-ref HEAD"
 	p = "!git push -u origin $(git branch-name)"
-	mb = "!git branch --sort=-committerdate | head -n 5" 
+	mb = !git branch --sort=-creatordate | cut -c3- | xargs git show --no-patch --date=short --pretty=format:'%C(green)%ad%C(reset) %C(magenta)%C(italic)%<(40,trunc)%S%C(reset) %C(auto)%h %C(blue)%<(15,trunc)%an %C(auto)%<(65,trunc)%s%D%C(reset)' --color=always | fzf --ansi | awk '{print $2}' | xargs git switch 
 	co = checkout
 	npr = "pull-request"
 	remaster = fetch origin master:master
