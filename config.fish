@@ -21,7 +21,7 @@ function flac2mp3
 end
 
 function todo
-    vi +startinsert $TODODIR/todo.md
+    vi $TODODIR/todo.md
 end
 
 function j
@@ -178,3 +178,5 @@ end
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/ylukem/Downloads/google-cloud-sdk/path.fish.inc' ]; . '/Users/ylukem/Downloads/google-cloud-sdk/path.fish.inc'; end
+
+if status --is-interactive; sh ~/.nightshell/carbonized-dark; end

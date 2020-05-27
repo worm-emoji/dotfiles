@@ -24,8 +24,19 @@ Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'pangloss/vim-javascript'
+Plug 'nightsense/carbonized'
 Plug 'mrk21/yaml-vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+call plug#end()
+
+
+colorscheme carbonized-dark
+
+
 " This file represents the minimal .vimrc needed to work with govim.
 "
 " We also include a number of suggested settings that we think the majority of
@@ -35,7 +46,6 @@ set nocompatible
 set nobackup
 set nowritebackup
 set noswapfile
-
 filetype plugin on
 
 set mouse=a
@@ -97,7 +107,6 @@ endif
 let g:go_def_mapping_enabled = 0
 
 " Make sure you use single quotes
-call plug#end()
 
 nnoremap <Space>t :tabnew ~/Dropbox/todo.md
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
