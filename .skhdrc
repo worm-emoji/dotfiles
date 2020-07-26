@@ -7,6 +7,7 @@ cmd + shift - a : yabai -m query --windows | jq '.[] | select(.app=="Alacritty")
 cmd + shift - d : yabai -m query --windows | jq '.[] | select(.app=="Slack").space' | xargs yabai -m space --focus || yabai -m space --focus recent
 cmd + shift - s : yabai -m query --windows | jq '.[] | select(.app=="Firefox").space' | xargs yabai -m space --focus || yabai -m space --focus recent
 cmd + shift - w : yabai -m query --windows | jq '.[] | select(.app=="Messages").space' | xargs yabai -m space --focus || yabai -m space --focus recent
+cmd + shift - l : yabai -m query --windows | jq '.[] | select(.app=="Music").space' | xargs yabai -m space --focus || yabai -m space --focus recent
 
 .blacklist [
     "simulator"
