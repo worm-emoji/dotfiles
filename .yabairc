@@ -1,12 +1,11 @@
 # Default layout
 yabai -m config layout bsp
-
 # Window padding
-yabai -m config top_padding    20
-yabai -m config bottom_padding 20
-yabai -m config left_padding   20
-yabai -m config right_padding  20
-yabai -m config window_gap     10
+yabai -m config top_padding    28
+yabai -m config bottom_padding 0
+yabai -m config left_padding   0
+yabai -m config right_padding  0
+yabai -m config window_gap     0
 
 # set mouse interaction modifier key (default: fn)
 yabai -m config mouse_modifier fn
@@ -20,11 +19,25 @@ yabai -m config mouse_action2 resize
 # set mouse follows focus mode (default: off)
 yabai -m config mouse_follows_focus on
 
+# modify window shadows (default: on, options: on, off, float)
+yabai -m config window_shadow float
+
 # set focus follows mouse mode (default: off, options: off, autoraise, autofocus)
 yabai -m config focus_follows_mouse autoraise
 
 # window opacity (default: off)
 # example: render all unfocused windows with 95% opacity
-# yabai -m config window_opacity on
-# yabai -m config active_window_opacity 1.0
-# yabai -m config normal_window_opacity 0.95
+yabai -m config window_opacity on
+yabai -m config active_window_opacity 1.0
+yabai -m config normal_window_opacity 0.9
+yabai -m config window_opacity_duration 0.0
+
+yabai -m rule --add \
+  label="Firefox PiP window rules"\
+  app="^Firefox\$"\
+  title="^Picture-in-Picture\$"\
+  manage=off\
+  sticky=on\
+  opacity=1
+
+yabai -m rule --add app="^Simulator\$" manage=off

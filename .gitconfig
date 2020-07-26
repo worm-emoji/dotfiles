@@ -21,6 +21,7 @@
 	mb = !git branch --sort=-creatordate | cut -c3- | xargs git show --no-patch --date=short --pretty=format:'%C(green)%ad%C(reset) %C(magenta)%C(italic)%<(40,trunc)%S%C(reset) %C(auto)%h %C(blue)%<(15,trunc)%an %C(auto)%<(65,trunc)%s%D%C(reset)' --color=always | fzf --ansi | awk '{print $2}' | xargs git switch 
 	co = checkout
 	npr = "pull-request"
+	remain = fetch origin main:main
 	remaster = fetch origin master:master
 	pf = push --force
 [hub]
