@@ -76,6 +76,9 @@ set balloondelay=250
 " case set signcolumn=number
 set signcolumn=yes
 
+" " Scroll offsets. Used for zt and zb
+" set scrolloff=5
+
 " Suggestion: Turn on syntax highlighting for .go files. You might prefer to
 " turn on syntax highlighting for all files, in which case
 "

@@ -176,7 +176,7 @@ function iterm2_fish_prompt --description 'Write out the prompt'
     z --add "$PWD"
 end
 
+if status --is-interactive; sh ~/.nightshell/carbonized-dark; end
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/ylukem/Downloads/google-cloud-sdk/path.fish.inc' ]; . '/Users/ylukem/Downloads/google-cloud-sdk/path.fish.inc'; end
-
-if status --is-interactive; sh ~/.nightshell/carbonized-dark; end
