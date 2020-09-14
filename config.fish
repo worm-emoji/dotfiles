@@ -25,7 +25,7 @@ function todo
 end
 
 function j
-   echo \n\n"## ["(date +'%H:%M')"]"\n\n >> $JOURNALDIR/(date +'%Y-%m-%d').md
+   echo \n\n"## ["(date +'%H:%M:%S')"]"\n\n >> $JOURNALDIR/(date +'%Y-%m-%d').md
    vi '+normal G$' +startinsert $JOURNALDIR/(date +'%Y-%m-%d').md
 end
 
