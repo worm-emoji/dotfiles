@@ -25,12 +25,19 @@ yabai -m config window_shadow float
 # set focus follows mouse mode (default: off, options: off, autoraise, autofocus)
 yabai -m config focus_follows_mouse autoraise
 
-# window opacity (default: off)
-# example: render all unfocused windows with 95% opacity
-yabai -m config window_opacity on
-yabai -m config active_window_opacity 1.0
-yabai -m config normal_window_opacity 0.9
-yabai -m config window_opacity_duration 0.0
+yabai -m config active_window_border_color 0xff775759
+
+yabai -m config window_topmost on
+
+# modify window shadows (default: on, options: on, off, float)
+# example: show shadows only for floating windows
+yabai -m config window_shadow float
+
+yabai -m config window_border on
+yabai -m config window_border_width 6
+yabai -m config active_window_border_color 0xffb88b3b
+yabai -m config normal_window_border_color 0xff555555
+yabai -m rule --add app=Alacritty border=off
 
 yabai -m rule --add \
   label="Firefox PiP window rules"\
