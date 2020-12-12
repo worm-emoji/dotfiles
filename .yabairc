@@ -5,9 +5,9 @@ yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 yabai -m config layout bsp
 # Window padding
 yabai -m config top_padding    28
-yabai -m config bottom_padding 0
-yabai -m config left_padding   0
-yabai -m config right_padding  0
+yabai -m config bottom_padding 4
+yabai -m config left_padding   2
+yabai -m config right_padding  2
 yabai -m config window_gap     0
 
 # set mouse interaction modifier key (default: fn)
@@ -37,7 +37,7 @@ yabai -m config window_topmost on
 yabai -m config window_shadow float
 
 yabai -m config window_border on
-yabai -m config window_border_width 6
+yabai -m config window_border_width 4
 yabai -m config active_window_border_color 0xffb88b3b
 yabai -m config normal_window_border_color 0xff555555
 yabai -m rule --add app=Alacritty border=off
@@ -51,3 +51,4 @@ yabai -m rule --add \
   opacity=1
 
 yabai -m rule --add app="^Simulator\$" manage=off
+yabai -m rule --add app="^System Preferences\$" manage=off
