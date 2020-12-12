@@ -20,11 +20,12 @@ call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-commentary'
-Plug '/usr/local/opt/fzf'
-Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
+Plug '/usr/local/opt/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'nightsense/carbonized'
+Plug 'jiangmiao/auto-pairs'
 Plug 'mrk21/yaml-vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'HerringtonDarkholme/yats.vim'
@@ -85,8 +86,9 @@ set signcolumn=yes
 " syntax on
 "
 " will suffice, no autocmd required.
-autocmd! BufEnter,BufNewFile *.go syntax on
-autocmd! BufLeave *.go syntax off
+" autocmd! BufEnter,BufNewFile *.go syntax on
+" autocmd! BufLeave *.go syntax off
+syntax on
 
 " Suggestion: turn on auto-indenting. If you want closing parentheses, braces
 " etc to be added, https://github.com/jiangmiao/auto-pairs. In future we might
@@ -94,6 +96,9 @@ autocmd! BufLeave *.go syntax off
 set autoindent
 set smartindent
 filetype indent on
+
+autocmd! BufEnter,BufNewFile *.js set tabstop=2 shiftwidth=2 expandtab
+autocmd! BufLeave *.js set noexpandtab tabstop=4 shiftwidth=4
 
 " Suggestion: define sensible backspace behaviour. See :help backspace for
 " more details
@@ -108,6 +113,13 @@ endif
 " disable vim-go :GoDef short cut (gd)
 " this is handled by LanguageClient [LC]
 let g:go_def_mapping_enabled = 0
+
+" Prettier config
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
+let g:prettier#config#use_tabs = 'false'
+let g:prettier#quickfix_enabled = 0
+autocmd TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
 " Make sure you use single quotes
 

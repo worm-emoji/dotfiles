@@ -1,6 +1,6 @@
 cmd + alt - g : toggle-grayscale
 cmd + shift - 9 : /usr/bin/osascript -e 'do shell script "killall coreaudiod 2>&1" with administrator privileges'
-cmd + shift - 0 : brew services restart yabai
+cmd + shift - 0 : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 
 # focus specific window
 cmd + shift - a : yabai -m query --windows | jq '.[] | select(.app=="Alacritty").space' | xargs yabai -m space --focus || yabai -m space --focus recent
@@ -8,9 +8,9 @@ cmd + shift - d : yabai -m query --windows | jq '.[] | select(.app=="Slack").spa
 cmd + shift - s : yabai -m query --windows | jq '.[] | select(.app=="Firefox").space' | xargs yabai -m space --focus || yabai -m space --focus recent
 cmd + shift - w : yabai -m query --windows | jq '.[] | select(.app=="Messages").space' | xargs yabai -m space --focus || yabai -m space --focus recent
 cmd + shift - l : yabai -m query --windows | jq '.[] | select(.app=="Music").space' | xargs yabai -m space --focus || yabai -m space --focus recent
-cmd + shift - m : yabai -m query --windows | jq '.[] | select(.app=="Mail").space' | xargs yabai -m space --focus || yabai -m space --focus recent
+cmd + shift - m : yabai -m query --windows | jq '.[] | select(.app=="Mimestream").space' | xargs yabai -m space --focus || yabai -m space --focus recent
 cmd + shift - z : yabai -m query --windows | jq '.[] | select(.app=="zoom.us").space' | xargs yabai -m space --focus || yabai -m space --focus recent
-
+cmd + shift - x : yabai -m query --windows | jq '.[] | select(.app=="Xcode").space' | xargs yabai -m space --focus || yabai -m space --focus recent
 
 .blacklist [
     "simulator"
