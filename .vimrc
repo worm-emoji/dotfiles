@@ -121,9 +121,12 @@ let g:prettier#config#use_tabs = 'false'
 let g:prettier#quickfix_enabled = 0
 autocmd TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
-" Make sure you use single quotes
-
-nnoremap <Space>t :tabnew ~/Dropbox/todo.md
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" Leader key mappings
+nnoremap <Space> <Nop>
+let mapleader = "\<Space>"
+nnoremap <Leader>f :Files<CR>
+nnoremap <Leader>r :Rg<CR>
