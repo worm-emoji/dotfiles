@@ -1,10 +1,3 @@
-"autocmd BufRead,BufNewFile *PULLREQ_EDITMSG setlocal tw=69 wrap filetype=md 
-"set expandtab
-"set autoindent
-"set tabstop=2
-
-
-
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -37,16 +30,7 @@ call plug#end()
 
 colorscheme carbonized-dark
 
-
-" This file represents the minimal .vimrc needed to work with govim.
-"
-" We also include a number of suggested settings that we think the majority of
-" users will like/prefer.
-
 set nocompatible
-set nobackup
-set nowritebackup
-set noswapfile
 filetype plugin on
 
 set mouse=a
@@ -97,8 +81,31 @@ set autoindent
 set smartindent
 filetype indent on
 
-autocmd! BufEnter,BufNewFile *.js set tabstop=2 shiftwidth=2 expandtab
-autocmd! BufLeave *.js set noexpandtab tabstop=4 shiftwidth=4
+" Preferences for various file formats
+autocmd FileType c setlocal noet ts=8 sw=8 tw=80
+autocmd FileType h setlocal noet ts=8 sw=8 tw=80
+autocmd FileType cpp setlocal noet ts=8 sw=8 tw=80
+autocmd FileType s setlocal noet ts=8 sw=8
+autocmd FileType go setlocal noet ts=4 sw=4
+autocmd FileType hy setlocal filetype=lisp
+autocmd FileType sh setlocal noet ts=4 sw=4
+autocmd BufRead,BufNewFile *.js setlocal et ts=2 sw=2
+autocmd FileType html setlocal et ts=2 sw=2
+autocmd FileType htmldjango setlocal et ts=2 sw=2
+autocmd FileType ruby setlocal et ts=2 sw=2
+autocmd FileType scss setlocal et ts=2 sw=2
+autocmd FileType yaml setlocal et ts=2 sw=2
+autocmd FileType markdown setlocal tw=80 et ts=2 sw=2
+autocmd FileType text setlocal tw=80
+autocmd FileType meson setlocal noet ts=2 sw=2
+autocmd FileType bzl setlocal et ts=2 sw=2
+autocmd FileType typescript setlocal et ts=2 sw=2
+autocmd FileType python setlocal et ts=4 sw=4
+autocmd BufNewFile,BufRead *.ms set syntax=python ts=4 sw=4 noet
+autocmd FileType tex hi Error ctermbg=NONE
+autocmd FileType mail setlocal noautoindent
+autocmd FileType gmi set wrap linebreak
+augroup filetypedetect
 
 " Suggestion: define sensible backspace behaviour. See :help backspace for
 " more details
@@ -119,7 +126,6 @@ let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
 let g:prettier#config#use_tabs = 'false'
 let g:prettier#quickfix_enabled = 0
-autocmd TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
@@ -130,3 +136,8 @@ nnoremap <Space> <Nop>
 let mapleader = "\<Space>"
 nnoremap <Leader>f :Files<CR>
 nnoremap <Leader>r :Rg<CR>
+nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR> " Trim trailing spaces
+
+" Don't litter swp files everywhere
+set backupdir=~/.cache
+set directory=~/.cache

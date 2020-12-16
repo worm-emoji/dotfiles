@@ -12,6 +12,12 @@ cmd + shift - m : yabai -m query --windows | jq '.[] | select(.app=="Mimestream"
 cmd + shift - z : yabai -m query --windows | jq '.[] | select(.app=="zoom.us").space' | xargs yabai -m space --focus || yabai -m space --focus recent
 cmd + shift - x : yabai -m query --windows | jq '.[] | select(.app=="Xcode").space' | xargs yabai -m space --focus || yabai -m space --focus recent
 
+# Space navigation
+cmd + shift - left : yabai -m space --focus prev || yabai -m space --focus last
+cmd + shift - right : yabai -m space --focus next || yabai -m space --focus first
+cmd + shift - down : yabai -m space --destroy
+cmd + shift - up : yabai -m space --create
+
 .blacklist [
     "simulator"
 ]
