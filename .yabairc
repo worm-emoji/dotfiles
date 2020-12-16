@@ -40,7 +40,6 @@ yabai -m config window_border on
 yabai -m config window_border_width 4
 yabai -m config active_window_border_color 0xffb88b3b
 yabai -m config normal_window_border_color 0xff555555
-yabai -m rule --add app=Alacritty border=off
 
 yabai -m rule --add app="^Firefox\$" title="^Picture-in-Picture\$" manage=off sticky=on opacity=1
 
@@ -49,3 +48,8 @@ yabai -m rule --add app="^System Preferences\$" manage=off
 yabai -m rule --add \
   app="^Screen\$" \
   manage=off
+
+# Clean up spaces automatically
+yabai -m signal --add event=space_changed \
+    action="yabai -m query --spaces | jq '.[] | select(.windows==[] and .focused != 1).index' | xargs -I {} yabai -m space {} --destroy"
+
