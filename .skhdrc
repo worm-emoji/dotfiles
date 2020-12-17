@@ -4,7 +4,7 @@ alt - 0 : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 
 # focus specific window
 cmd + shift - a : yabai -m query --windows | jq '.[] | select(.app=="Alacritty").space' | xargs yabai -m space --focus || yabai -m space --focus recent
-cmd + shift - d : yabai -m query --windows | jq '.[] | select(.app=="Slack").space' | xargs yabai -m space --focus || yabai -m space --focus recent
+cmd + shift - d : yabai -m query --windows | jq '.[] | select(.app=="Slack" or .app =="Discord").space' | xargs yabai -m space --focus || yabai -m space --focus recent
 cmd + shift - s : yabai -m query --windows | jq '.[] | select(.app=="Firefox").space' | xargs yabai -m space --focus || yabai -m space --focus recent
 cmd + shift - w : yabai -m query --windows | jq '.[] | select(.app=="Messages").space' | xargs yabai -m space --focus || yabai -m space --focus recent
 cmd + shift - l : yabai -m query --windows | jq '.[] | select(.app=="Music").space' | xargs yabai -m space --focus || yabai -m space --focus recent
@@ -27,6 +27,9 @@ cmd + shift - left : yabai -m space --focus prev || yabai -m space --focus last
 cmd + shift - right : yabai -m space --focus next || yabai -m space --focus first
 cmd + shift - down : yabai -m space --destroy
 cmd + shift - up : yabai -m space --create
+
+cmd + shift - r : yabai -m space --rotate 90
+cmd + shift - f : yabai -m window --toggle zoom-fullscreen
 
 # Create space and move current window to it
 # (cmd + shift - ')
