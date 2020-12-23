@@ -44,6 +44,7 @@ yabai -m config normal_window_border_color 0xff555555
 yabai -m rule --add app=Alacritty border=off
 yabai -m rule --add app=IINA border=off
 yabai -m rule --add app=VLC border=off
+yabai -m rule --add app="^Put.IO Adder\$" manage=off
 
 yabai -m rule --add app="^Firefox\$" title="^Picture-in-Picture\$" manage=off sticky=on opacity=1
 
