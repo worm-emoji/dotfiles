@@ -82,15 +82,21 @@
   height: 42px; /* make the window controls roughly the same height as the nav-bar */
 }
 #nav-bar {
-  margin-left: 75px; /* push nav-bar to the right to make space for the window controls -- */
   background: transparent !important; /* optional -make nav-bar background look the same as the window controls background */
 }
 
 .titlebar-buttonbox-container {
-  /* added for compact theme*/
-  margin-top: -8px;
+  display: none;
 }
 
-#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]
+  #sidebar-header {
+  display: none;
+}
+
+#reload-button,
+#back-button,
+#forward-button,
+#stop-button {
   display: none;
 }
