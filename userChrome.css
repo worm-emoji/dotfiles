@@ -83,6 +83,8 @@
 }
 #nav-bar {
   background: transparent !important; /* optional -make nav-bar background look the same as the window controls background */
+  font-family: "Iosevka Term SS05";
+  font-weight: 200;
 }
 
 .titlebar-buttonbox-container {
@@ -94,9 +96,83 @@
   display: none;
 }
 
+#sidebar-box {
+  font-family: "Iosevka Term SS05";
+}
+
 #reload-button,
 #back-button,
 #forward-button,
 #stop-button {
   display: none;
+}
+
+:root[uidensity="compact"] #urlbar,
+:root[uidensity="compact"] .searchbar-textbox {
+  font-size: 12px !important;
+  min-height: 18px !important;
+}
+
+:root[uidensity="compact"] #identity-box {
+  max-height: 18px;
+}
+
+:root[uidensity="compact"] #nav-bar .toolbarbutton-1 {
+  padding: 0px !important;
+}
+
+/* Compatibility with auto-hide.css */
+:root[uidensity="compact"] #navigator-toolbox {
+  --nav-bar-height: 18px !important;
+}
+
+:root {
+  --toolbarbutton-inner-padding: 0px !important;
+}
+#userContext-indicator {
+  display: none;
+}
+
+#urlbar-container {
+  padding-block: 0px !important;
+}
+
+#userContext-label {
+  text-transform: lowercase;
+  font-size: 10px;
+}
+
+#userContext-icons,
+#urlbar-zoom-button {
+  margin-inline: 0px;
+}
+
+#urlbar-background {
+  background-color: var(--toolbar-bgcolor) !important;
+  border-color: transparent !important;
+}
+
+#urlbar:not(.searchButton)
+  > #urlbar-input-container
+  > #identity-box[pageproxystate="invalid"]
+  > #identity-icon {
+  display: none;
+}
+
+#PanelUI-menu-button {
+  margin-right: 8px !important;
+}
+
+.sharing-icon,
+#identity-icon,
+#permissions-granted-icon,
+#tracking-protection-icon,
+.notification-anchor-icon,
+#blocked-permissions-container > .blocked-permission-icon,
+#tracking-protection-icon-box {
+  height: 8px !important;
+  width: 8px !important;
+}
+toolbarbutton {
+  scale: 0.6;
 }

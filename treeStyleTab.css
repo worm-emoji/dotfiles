@@ -1,0 +1,21 @@
+tab-item.unread .label-content {
+  font-style: italic;
+}
+
+tab-item {
+  font-family: "Iosevka Term SS05";
+  font-weight: 400;
+  font-size: 12px;
+  --tab-size: 20px !important;
+  height: var(--tab-size);
+}
+
+/* change the base box to layout position:absolute box, from the root container box to the tab item */
+:root.group-tab li {
+  position: relative;
+}
+:root.group-tab .default-favicon,
+:root.group-tab img,
+:root.group-tab .label {
+  z-index: 100;
+}
