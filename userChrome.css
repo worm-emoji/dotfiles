@@ -96,8 +96,8 @@
   display: none;
 }
 
-#sidebar-box {
-  font-family: "Iosevka Term SS05";
+#sidebar {
+  min-width: 100px !important;
 }
 
 #reload-button,
