@@ -58,6 +58,7 @@
 }
 
 #navigator-toolbox {
+  --toolbar-bgcolor: #202020;
   background: var(--toolbar-bgcolor);
 }
 .browser-toolbar:not(.titlebar-color) {
@@ -109,12 +110,12 @@
 
 :root[uidensity="compact"] #urlbar,
 :root[uidensity="compact"] .searchbar-textbox {
-  font-size: 12px !important;
-  min-height: 18px !important;
+  font-size: 14px !important;
+  min-height: 28px !important;
 }
 
 :root[uidensity="compact"] #identity-box {
-  max-height: 18px;
+  max-height: 28px;
 }
 
 :root[uidensity="compact"] #nav-bar .toolbarbutton-1 {
@@ -123,7 +124,7 @@
 
 /* Compatibility with auto-hide.css */
 :root[uidensity="compact"] #navigator-toolbox {
-  --nav-bar-height: 18px !important;
+  --nav-bar-height: 28px !important;
 }
 
 :root {
@@ -170,9 +171,11 @@
 .notification-anchor-icon,
 #blocked-permissions-container > .blocked-permission-icon,
 #tracking-protection-icon-box {
-  height: 8px !important;
-  width: 8px !important;
+  height: 12px !important;
+  width: 12px !important;
 }
+
 toolbarbutton {
-  scale: 0.6;
+  scale: 0.8;
+  filter: grayscale(1);
 }
