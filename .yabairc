@@ -45,10 +45,8 @@ yabai -m rule --add app=Alacritty border=off
 yabai -m rule --add app=Firefox border=off
 yabai -m rule --add app=IINA border=off
 yabai -m rule --add app=VLC border=off
-yabai -m rule --add app="^Put.IO Adder\$" manage=off
-
 yabai -m rule --add app="^Firefox\$" title="^Picture-in-Picture\$" manage=off sticky=on opacity=1
-
+yabai -m rule --add app="^Tomato One\$" manage=off
 yabai -m rule --add app="^Simulator\$" manage=off
 yabai -m rule --add app="^System Preferences\$" manage=off
 yabai -m rule --add \
