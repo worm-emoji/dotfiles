@@ -135,7 +135,7 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " Leader key mappings
 nnoremap <Space> <Nop>
 let mapleader = "\<Space>"
-nnoremap <Leader>f :Files<CR>
+nnoremap <Leader>f :GFiles<CR>
 nnoremap <Leader>r :Rg<CR>
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR> " Trim trailing spaces
 
