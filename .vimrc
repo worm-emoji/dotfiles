@@ -43,7 +43,7 @@ set mouse=a
 " automated tests using xterm as the terminal, a setting of ttymouse=xterm
 " does not work correctly beyond a certain column number (citation needed)
 " hence we use ttymouse=sgr
-set ttymouse=sgr
+" set ttymouse=sgr
 
 " Suggestion: By default, govim populates the quickfix window with diagnostics
 " reported by gopls after a period of inactivity, the time period being
@@ -53,7 +53,7 @@ set updatetime=500
 
 " Suggestion: To make govim/Vim more responsive/IDE-like, we suggest a short
 " balloondelay
-set balloondelay=250
+" set balloondelay=250
 
 " Suggestion: Turn on the sign column so you can see error marks on lines
 " where there are quickfix errors. Some users who already show line number
@@ -122,6 +122,11 @@ endif
 " this is handled by LanguageClient [LC]
 let g:go_def_mapping_enabled = 0
 
+
+" Git integration
+set statusline^=%{get(g:,'coc_git_status','')}%{get(b:,'coc_git_status','')}%{get(b:,'coc_git_blame','')}
+
+
 " Prettier config
 let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
@@ -136,6 +141,7 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 nnoremap <Space> <Nop>
 let mapleader = "\<Space>"
 nnoremap <Leader>f :GFiles<CR>
+nnoremap <Leader>h :Files<CR>
 nnoremap <Leader>r :Rg<CR>
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR> " Trim trailing spaces
 

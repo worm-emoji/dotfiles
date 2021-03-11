@@ -5,6 +5,7 @@ alias grep rg
 alias c code
 alias s ddgr
 alias gst "git status"
+alias vi nvim
 set GOPATH /Users/$USER/go
 set PATH $GOPATH/bin $PATH
 set PRDIR /Volumes/GoogleDrive/My\ Drive/prs
@@ -12,7 +13,7 @@ set TODODIR "/Users/$USER/Dropbox"
 set NOTESDIR /Volumes/GoogleDrive/My\ Drive/notes
 set JOURNALDIR /Users/$USER/Library/Mobile\ Documents/iCloud~posting/Documents
 set PATH /usr/local/bin /usr/local/bin /usr/bin /bin /usr/sbin /sbin "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" /Users/ylukem/.cargo/bin $PATH
-set EDITOR vi
+set EDITOR nvim
 
 abbr --add gco "git co -b ylukem/"
 
