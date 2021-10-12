@@ -6,6 +6,8 @@ endif
 
 set relativenumber
 set clipboard=unnamed
+set number relativenumber
+
 " Specify a directory for plugins
 " - For Neovim: stdpath('data') . '/plugged'
 " - Avoid using standard Vim directory names like 'plugin'
@@ -17,18 +19,17 @@ Plug 'tpope/vim-fugitive'
 Plug '/usr/local/opt/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'pangloss/vim-javascript'
-Plug 'nightsense/carbonized'
+Plug 'cocopon/iceberg.vim'
 Plug 'jiangmiao/auto-pairs'
+Plug 'luochen1990/rainbow'
 Plug 'mrk21/yaml-vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'HerringtonDarkholme/yats.vim'
+Plug 'jparise/vim-graphql'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 call plug#end()
-
-
-colorscheme carbonized-dark
 
 set nocompatible
 filetype plugin on
@@ -144,6 +145,10 @@ nnoremap <Leader>f :GFiles<CR>
 nnoremap <Leader>h :Files<CR>
 nnoremap <Leader>r :Rg<CR>
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR> " Trim trailing spaces
+let g:rainbow_active = 1
+
+" Git integration
+set statusline^=%{get(g:,'coc_git_status','')}%{get(b:,'coc_git_status','')}%{get(b:,'coc_git_blame','')}
 
 " Don't litter swp files everywhere
 set backupdir=~/.cache

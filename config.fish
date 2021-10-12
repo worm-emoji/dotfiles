@@ -1,4 +1,3 @@
-. ~/.config/fish/z.fish
 alias git hub
 alias weather "curl https://v2.wttr.in/u"
 alias grep rg
@@ -8,6 +7,7 @@ alias gst "git status"
 alias vi nvim
 set GOPATH /Users/$USER/go
 set PATH $GOPATH/bin $PATH
+set PATH /usr/local/go/bin $PATH
 set PRDIR /Volumes/GoogleDrive/My\ Drive/prs
 set TODODIR "/Users/$USER/Dropbox"
 set NOTESDIR /Volumes/GoogleDrive/My\ Drive/notes
