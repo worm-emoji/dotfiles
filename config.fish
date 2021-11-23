@@ -7,11 +7,18 @@ alias gst "git status"
 alias vi nvim
 set GOPATH /Users/$USER/go
 set PATH $GOPATH/bin $PATH
-set PATH /usr/local/go/bin $PATH
+set -gx HOMEBREW_PREFIX "/opt/homebrew";
+set -gx HOMEBREW_CELLAR "/opt/homebrew/Cellar";
+set -gx HOMEBREW_REPOSITORY "/opt/homebrew";
+set -gx HOMEBREW_SHELLENV_PREFIX "/opt/homebrew";
+set -q PATH; or set PATH ''; set -gx PATH "/opt/homebrew/bin" "/opt/homebrew/sbin" $PATH;
+set -q MANPATH; or set MANPATH ''; set -gx MANPATH "/opt/homebrew/share/man" $MANPATH;
+set -q INFOPATH; or set INFOPATH ''; set -gx INFOPATH "/opt/homebrew/share/info" $INFOPATH;
 set PRDIR /Volumes/GoogleDrive/My\ Drive/prs
 set TODODIR "/Users/$USER/Dropbox"
 set NOTESDIR /Volumes/GoogleDrive/My\ Drive/notes
 set JOURNALDIR /Users/$USER/Library/Mobile\ Documents/iCloud~posting/Documents
+set PATH /opt/homebrew $PATH
 set PATH /usr/local/bin /usr/local/bin /usr/bin /bin /usr/sbin /sbin "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" /Users/ylukem/.cargo/bin $PATH
 set EDITOR nvim
 
