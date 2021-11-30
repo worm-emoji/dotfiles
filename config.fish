@@ -22,6 +22,9 @@ set PATH /opt/homebrew $PATH
 set PATH /usr/local/bin /usr/local/bin /usr/bin /bin /usr/sbin /sbin "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" /Users/ylukem/.cargo/bin $PATH
 set EDITOR nvim
 
+ulimit -n 200000
+ulimit -u 2048
+
 abbr --add gco "git co -b ylukem/"
 
 function flac2mp3
