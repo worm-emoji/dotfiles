@@ -112,7 +112,7 @@ font:
   # The normal (roman) font face to use.
   # Style can be specified to pick a specific face.
   normal:
-    family: "Iosevka Term SS05"
+    family: "JetBrains Mono"
     style: "Light"
     # family: "Fira Code"
     # family: "Source Code Pro"
@@ -123,15 +123,15 @@ font:
 
   # The italic font face
   italic:
-    family: "Iosevka Term SS05"
+    family: "JetBrains Mono"
     style: "Italic"
 
   # Bold italic font face
   bold_italic:
-    family: "Iosevka Term SS05"
+    family: "JetBrains Mono"
     style: "Bold Italic"
   # Point size
-  size: 15.0
+  size: 13.0
 
   # Colors (Iceberg Dark)
 colors:
