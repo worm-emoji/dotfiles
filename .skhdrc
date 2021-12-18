@@ -4,12 +4,13 @@ alt - 0 : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 
 # focus specific window
 cmd + shift - a : yabai -m query --windows | jq '.[] | select(.app=="Alacritty").space' | xargs yabai -m space --focus || yabai -m space --focus recent
-cmd + shift - d : yabai -m query --windows | jq '.[] | select(.app=="Slack" or .app =="Discord").space' | xargs yabai -m space --focus || yabai -m space --focus recent
+cmd + shift - d : yabai -m query --windows | jq '.[] | select(.app=="Slack" or .app =="Discord Canary").space' | xargs yabai -m space --focus || yabai -m space --focus recent
 cmd + shift - s : yabai -m query --windows | jq '.[] | select(.app=="Firefox" or .app =="Brave Browser").space' | xargs yabai -m space --focus || yabai -m space --focus recent
 cmd + shift - w : yabai -m query --windows | jq '.[] | select(.app=="Texts").space' | xargs yabai -m space --focus || yabai -m space --focus recent
 cmd + shift - l : yabai -m query --windows | jq '.[] | select(.app=="Music" or .app =="Sonos").space' | xargs yabai -m space --focus || yabai -m space --focus recent
 cmd + shift - m : yabai -m query --windows | jq '.[] | select(.app=="Mimestream").space' | xargs yabai -m space --focus || yabai -m space --focus recent
 cmd + shift - x : yabai -m query --windows | jq '.[] | select(.app=="Xcode" or .app =="Code").space' | xargs yabai -m space --focus || yabai -m space --focus recent
+cmd + shift - c : yabai -m query --windows | jq '.[] | select(.app=="Texts").space' | xargs yabai -m space --focus || yabai -m space --focus recent
 
 # Space navigation
 cmd + shift - 1 : yabai -m space --focus 1

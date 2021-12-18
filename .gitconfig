@@ -3,7 +3,7 @@
 # That matches how "git config --global" edits the file.
 
 [user]
-        name = "Luke Miles"
+	name = luke miles
         email = "luke@lukemil.es"
 
 [push]
