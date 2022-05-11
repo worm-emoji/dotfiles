@@ -18,9 +18,14 @@ set PRDIR /Volumes/GoogleDrive/My\ Drive/prs
 set TODODIR "/Users/$USER/Dropbox"
 set NOTESDIR /Volumes/GoogleDrive/My\ Drive/notes
 set JOURNALDIR /Users/$USER/Library/Mobile\ Documents/iCloud~posting/Documents
+set PATH /usr/local/bin /usr/local/bin /usr/bin /bin /usr/sbin /sbin "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" /Users/ylukem/.cargo/bin /Users/ylukem/.bun/bin $PATH
 set PATH /opt/homebrew $PATH
-set PATH /usr/local/bin /usr/local/bin /usr/bin /bin /usr/sbin /sbin "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" /Users/ylukem/.cargo/bin $PATH
 set EDITOR nvim
+
+
+if test -e '/Users/ylukem/.nix-profile/etc/profile.d/nix.sh'
+  fenv source '/Users/ylukem/.nix-profile/etc/profile.d/nix.sh'
+end
 
 ulimit -n 200000
 ulimit -u 2048
@@ -191,3 +196,43 @@ if status --is-interactive; sh ~/.nightshell/carbonized-dark; end
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/ylukem/Downloads/google-cloud-sdk/path.fish.inc' ]; . '/Users/ylukem/Downloads/google-cloud-sdk/path.fish.inc'; end
+
+# ~/.config/fish/functions/nvm.fish
+function nvm
+  bass source ~/.nvm/nvm.sh --no-use ';' nvm $argv
+end
+
+# ~/.config/fish/functions/nvm_find_nvmrc.fish
+function nvm_find_nvmrc
+  bass source ~/.nvm/nvm.sh --no-use ';' nvm_find_nvmrc
+end
+
+function nvm_get_default
+  echo ~/.nvm/versions/node/v(cat ~/.nvm/alias/default)/bin
+end
+
+
+export PATH="$PATH:/Users/ylukem/.foundry/bin"
+fish_add_path (nvm_get_default) -P
+
+
+function load_nvm --on-variable="PWD"
+  set -l default_node_version (nvm version default)
+  set -l node_version (nvm version)
+  set -l nvmrc_path (nvm_find_nvmrc)
+  if test -n "$nvmrc_path"
+    set -l nvmrc_node_version (nvm version (cat $nvmrc_path))
+    if test "$nvmrc_node_version" = "N/A"
+      nvm install (cat $nvmrc_path)
+    else if test "$nvmrc_node_version" != "$node_version"
+      nvm use $nvmrc_node_version
+    end
+  else if test "$node_version" != "$default_node_version"
+    echo "Reverting to default Node version"
+    nvm use default
+  end
+end
+
+# ~/.config/fish/config.fish
+# You must call it on initialization or listening to directory switching won't work
+# load_nvm > /dev/stderr

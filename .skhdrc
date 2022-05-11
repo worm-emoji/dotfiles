@@ -1,4 +1,4 @@
-cmd + alt - g : toggle-grayscale
+cmd + alt - g : shortcuts run "toggle grayscale"
 alt - 9 : /usr/bin/osascript -e 'do shell script "killall coreaudiod 2>&1" with administrator privileges'
 alt - 0 : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 

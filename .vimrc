@@ -26,6 +26,7 @@ Plug 'luochen1990/rainbow'
 Plug 'mrk21/yaml-vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'HerringtonDarkholme/yats.vim'
+Plug 'tomlion/vim-solidity'
 Plug 'jparise/vim-graphql'
 Plug 'github/copilot.vim'
 Plug 'prettier/vim-prettier', {
