@@ -19,7 +19,7 @@ set TODODIR "/Users/$USER/Dropbox"
 set NOTESDIR /Volumes/GoogleDrive/My\ Drive/notes
 set JOURNALDIR /Users/$USER/Library/Mobile\ Documents/iCloud~posting/Documents
 set PATH /usr/local/bin /usr/local/bin /usr/bin /bin /usr/sbin /sbin "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" /Users/ylukem/.cargo/bin /Users/ylukem/.bun/bin $PATH
-set PATH /opt/homebrew $PATH
+set PATH /opt/homebrew /opt/homebrew/bin $PATH
 set EDITOR nvim
 
 
