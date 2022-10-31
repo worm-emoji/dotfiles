@@ -20,7 +20,7 @@ Plug 'tpope/vim-rhubarb'
 Plug '/usr/local/opt/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'pangloss/vim-javascript'
-Plug 'cocopon/iceberg.vim'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'luochen1990/rainbow'
 Plug 'mrk21/yaml-vim'
@@ -36,6 +36,8 @@ call plug#end()
 
 set nocompatible
 filetype plugin on
+
+colorscheme tokyonight-night
 
 set mouse=a
 
@@ -147,6 +149,7 @@ let mapleader = "\<Space>"
 nnoremap <Leader>f :GFiles<CR>
 nnoremap <Leader>h :Files<CR>
 nnoremap <Leader>r :Rg<CR>
+nnoremap <Leader>g :GoBuild<CR>
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR> " Trim trailing spaces
 let g:rainbow_active = 1
 
