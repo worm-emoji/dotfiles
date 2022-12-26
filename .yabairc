@@ -34,7 +34,7 @@ yabai -m config focus_follows_mouse autoraise
 
 yabai -m config active_window_border_color 0xff775759
 
-yabai -m config window_topmost on
+yabai -m config window_topmost off
 
 # modify window shadows (default: on, options: on, off, float)
 # example: show shadows only for floating windows
