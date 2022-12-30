@@ -1,18 +1,14 @@
 sudo yabai --load-sa
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 
-yabai -m config window_opacity on
-yabai -m config active_window_opacity 1.0
-yabai -m config normal_window_opacity 0.9
-
 # Default layout
 yabai -m config layout bsp
 # Window padding
-yabai -m config top_padding    12
-yabai -m config bottom_padding 12
+yabai -m config top_padding    4
+yabai -m config bottom_padding 4
 yabai -m config left_padding   4
 yabai -m config right_padding  4
-yabai -m config window_gap     8
+yabai -m config window_gap     4
 
 # set mouse interaction modifier key (default: fn)
 yabai -m config mouse_modifier fn
@@ -32,36 +28,26 @@ yabai -m config window_shadow float
 # set focus follows mouse mode (default: off, options: off, autoraise, autofocus)
 yabai -m config focus_follows_mouse autoraise
 
-yabai -m config active_window_border_color 0xff775759
-
 yabai -m config window_topmost off
 
-# modify window shadows (default: on, options: on, off, float)
-# example: show shadows only for floating windows
 yabai -m config window_shadow float
+yabai -m config window_animation_duration 0.05 
+yabai -m config window_border on
+yabai -m config window_border_hidpi on
+yabai -m config window_border_width 2
+yabai -m config active_window_border_color 0xFF88C0D0
+yabai -m config normal_window_border_color 0x002E3440
+yabai -m config insert_feedback_color 0xFFA3BE8C
 
-yabai -m config window_border off
-yabai -m config window_border_width 4
-yabai -m config active_window_border_color 0xffb88b3b
-yabai -m config normal_window_border_color 0xff555555
-
-yabai -m rule --add app=Alacritty border=off
 yabai -m rule --add app=Firefox border=off
-yabai -m rule --add app=Safari border=off
 yabai -m rule --add app=Xcode border=off
 yabai -m rule --add app=IINA border=off
 yabai -m rule --add app=VLC border=off
 yabai -m rule --add app="^Firefox\$" title="^Picture-in-Picture\$" manage=off sticky=on opacity=1
 yabai -m rule --add app="^Tomato One\$" manage=off
-yabai -m rule --add app="^Simulator\$" manage=off
-yabai -m rule --add app="^World Clock Pro\$" manage=off
-yabai -m rule --add app="^System Preferences\$" manage=off
+yabai -m rule --add app="^Simulator\$" manage=off sticky=on
+yabai -m rule --add app="^System Settings\$" manage=off
 yabai -m rule --add \
   app="^Screen\$" \
   manage=off
 yabai -m rule --add app="^Frame\$" manage=off
-
-# Clean up spaces automatically
-# yabai -m signal --add event=space_changed \ */
-# action="yabai -m query --spaces | jq '.[] | select(.windows==[] and .focused != 1).index' | xargs -I {} yabai -m space {} --destroy" */
-

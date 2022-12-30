@@ -1,3 +1,79 @@
+# leader
+:: leader @
+0x32 ; leader
+# double tap backtick to get a literal backtick
+leader < 0x32 -> ; default
+# escape gets you out of a mode
+leader < escape ; default
+
+# focus space
+leader < ctrl - z :\
+  yabai -m space --focus prev;\
+  skhd -k "escape"
+leader < ctrl - c :\
+  yabai -m space --focus next;\
+  skhd -k "escape"
+
+# <leader>= : equalize sizes
+leader < 0x18 :\
+  yabai -m space --balance;\
+  skhd -k "escape"
+
+# swap window
+leader < shift - h :\
+  yabai -m window --swap west;\
+  skhd -k "escape"
+leader < shift - j :\
+  yabai -m window --swap south;\
+  skhd -k "escape"
+leader < shift - k :\
+  yabai -m window --swap north;\
+  skhd -k "escape"
+leader < shift - l :\
+  yabai -m window --swap east;\
+  skhd -k "escape"
+
+# move window
+leader < alt - h :\
+  yabai -m window --warp west;\
+  skhd -k "escape"
+leader < alt - j :\
+  yabai -m window --warp south;\
+  skhd -k "escape"
+leader < alt - k :\
+  yabai -m window --warp north;\
+  skhd -k "escape"
+leader < alt - l :\
+  yabai -m window --warp east;\
+  skhd -k "escape"
+
+# mirror tree y-axis
+leader < y :\
+  yabai -m space --mirror y-axis;\
+  skhd -k "escape"
+
+# mirror tree x-axis
+leader < x :\
+  yabai -m space --mirror x-axis;\
+  skhd -k "escape"
+
+# focus windows
+leader < h : yabai -m window --focus west;\
+             skhd -k "escape"
+leader < j : yabai -m window --focus south;\
+             skhd -k "escape"
+leader < k : yabai -m window --focus north;\
+             skhd -k "escape"
+leader < l : yabai -m window --focus east;\
+             skhd -k "escape"
+
+leader < f : \
+  yabai -m space --layout stack; \
+  skhd -k "escape"
+leader < b : \
+  yabai -m space --layout bsp; \
+  skhd -k "escape"
+
 cmd + alt - g : shortcuts run "toggle grayscale"
 alt - 9 : /usr/bin/osascript -e 'do shell script "killall coreaudiod 2>&1" with administrator privileges'
 alt - 0 : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
