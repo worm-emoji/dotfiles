@@ -37,7 +37,6 @@ call plug#end()
 set nocompatible
 filetype plugin on
 
-colorscheme tokyonight-night
 
 set mouse=a
 

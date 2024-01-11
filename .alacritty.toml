@@ -1,0 +1,70 @@
+[cursor.style]
+shape = "underline"
+
+[font]
+size = 14.0
+
+[font.bold_italic]
+family = "Iosevka Slab"
+style = "Bold"
+
+[[font.colors.indexed_colors]]
+color = "0xff9e64"
+index = 16
+
+[[font.colors.indexed_colors]]
+color = "0xdb4b4b"
+index = 17
+
+[font.colors.bright]
+black = "0x414868"
+blue = "0x7aa2f7"
+cyan = "0x7dcfff"
+green = "0x9ece6a"
+magenta = "0xbb9af7"
+red = "0xf7768e"
+white = "0xc0caf5"
+yellow = "0xe0af68"
+
+[font.colors.normal]
+black = "0x15161e"
+blue = "0x7aa2f7"
+cyan = "0x7dcfff"
+green = "0x9ece6a"
+magenta = "0xbb9af7"
+red = "0xf7768e"
+white = "0xa9b1d6"
+yellow = "0xe0af68"
+
+[font.colors.primary]
+background = "0x1a1b26"
+foreground = "0xc0caf5"
+
+[font.glyph_offset]
+x = 0
+y = 2
+
+[font.italic]
+family = "Iosevka Slab"
+style = "Italic"
+
+[font.normal]
+family = "Iosevka Slab"
+style = "Medium Extended"
+
+[font.offset]
+x = 0
+y = 3
+
+[mouse]
+hide_when_typing = false
+
+[window]
+decorations = "buttonless"
+dynamic_padding = false
+dynamic_title = true
+opacity = 1
+
+[window.padding]
+x = 20
+y = 20
