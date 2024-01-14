@@ -51,3 +51,9 @@ yabai -m rule --add \
   app="^Screen\$" \
   manage=off
 yabai -m rule --add app="^Frame\$" manage=off
+
+
+# Arc Browser specific
+yabai -m rule --add app="^Arc$" title="^$" mouse_follows_focus=off
+# focus window after active space changes
+yabai -m signal --add event=space_changed action="yabai -m window --focus \$(yabai -m query --windows --space | jq .[0].id)"

@@ -78,6 +78,7 @@ cmd + alt - g : shortcuts run "toggle grayscale"
 alt - 9 : /usr/bin/osascript -e 'do shell script "killall coreaudiod 2>&1" with administrator privileges'
 alt - 0 : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 
+
 # focus specific window
 cmd + shift - a : yabai -m query --windows | jq '.[] | select(.app=="Alacritty").space' | xargs yabai -m space --focus || yabai -m space --focus recent
 cmd + shift - d : yabai -m query --windows | jq '.[] | select(.app=="Slack" or .app =="Discord").space' | xargs yabai -m space --focus || yabai -m space --focus recent
@@ -104,13 +105,6 @@ cmd + shift - left : yabai -m space --focus prev || yabai -m space --focus last
 cmd + shift - right : yabai -m space --focus next || yabai -m space --focus first
 cmd + shift - down : yabai -m space --destroy
 cmd + shift - up : yabai -m space --create
-
-cmd + shift - r : yabai -m space --rotate 90
-cmd + shift - f : yabai -m window --toggle zoom-fullscreen
-
-# Create space and move current window to it
-# (cmd + shift - ')
-cmd + shift - 0x27: yabai -m space --create && yabai -m window --space last && yabai -m space --focus last
 
 .blacklist [
     "simulator"

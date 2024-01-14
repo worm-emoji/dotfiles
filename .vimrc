@@ -29,6 +29,9 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'tomlion/vim-solidity'
 Plug 'jparise/vim-graphql'
 Plug 'github/copilot.vim'
+Plug 'ruanyl/vim-gh-line'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} 
+Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
@@ -149,6 +152,7 @@ nnoremap <Leader>f :GFiles<CR>
 nnoremap <Leader>h :Files<CR>
 nnoremap <Leader>r :Rg<CR>
 nnoremap <Leader>g :GoBuild<CR>
+nnoremap <Leader>s :%s//g<Left><Left>
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR> " Trim trailing spaces
 let g:rainbow_active = 1
 
@@ -164,6 +168,8 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
+" go to definition in new split
+nmap <silent> gD :vsplit<CR>:wincmd l<CR><Plug>(coc-definition)
 
 " Make <CR> to accept selected completion item or notify coc.nvim to format
 " <C-g>u breaks current undo, please make your own choice.

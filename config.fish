@@ -5,8 +5,10 @@ alias c code
 alias s ddgr
 alias gst "git status"
 alias vi nvim
+alias k kubectl
 set GOPATH /Users/$USER/go
 set PATH $GOPATH/bin $PATH
+set XDG_CONFIG_HOME /Users/$USER/.config
 set -gx HOMEBREW_PREFIX "/opt/homebrew";
 set -gx HOMEBREW_CELLAR "/opt/homebrew/Cellar";
 set -gx HOMEBREW_REPOSITORY "/opt/homebrew";
