@@ -4,7 +4,7 @@
 
 [user]
 	name = luke miles
-        email = "luke@lukemil.es"
+	email = luke@context.wtf
 
 [push]
         default = simple
