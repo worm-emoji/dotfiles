@@ -278,4 +278,13 @@ source ~/.orbstack/shell/init2.fish 2>/dev/null || :
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
-function gb; set pr_url (gh pr view --json url -q .url 2>/dev/null); if test -n "$pr_url"; echo $pr_url; else; set repo_url (git remote get-url origin | string replace -r "\.git$" "" | string replace -r "git@github.com:" "https://github.com/"); set branch (git rev-parse --abbrev-ref HEAD); echo "$repo_url/tree/$branch"; end; end
+function gb
+    set pr_url (gh pr view --json url -q .url 2>/dev/null)
+    if test -n "$pr_url"
+        echo $pr_url
+    else
+        set repo_url (git remote get-url origin | string replace -r '\.git$' '' | string replace -r 'git@github.com:' 'https://github.com/')
+        set branch (git rev-parse --abbrev-ref HEAD)
+        echo "$repo_url/tree/$branch"
+    end
+end
