@@ -288,3 +288,9 @@ function gb
         echo "$repo_url/tree/$branch"
     end
 end
+
+fish_add_path -a "/Users/worm/.foundry/bin"
+export PATH="$HOME/.local/bin:$PATH"
+
+# Amp CLI
+export PATH="/Users/worm/.amp/bin:$PATH"
