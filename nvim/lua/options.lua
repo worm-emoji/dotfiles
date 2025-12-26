@@ -4,8 +4,24 @@ local opt = vim.opt
 opt.number = true
 opt.relativenumber = true
 
--- Clipboard
+-- Clipboard (use OSC 52 for SSH support)
 opt.clipboard = "unnamedplus"
+
+-- Enable OSC 52 clipboard provider (works over SSH in tmux)
+-- Requires Neovim 0.10+ and a terminal that supports OSC 52
+if vim.env.SSH_TTY then
+  vim.g.clipboard = {
+    name = "OSC 52",
+    copy = {
+      ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
+      ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
+    },
+    paste = {
+      ["+"] = require("vim.ui.clipboard.osc52").paste("+"),
+      ["*"] = require("vim.ui.clipboard.osc52").paste("*"),
+    },
+  }
+end
 
 -- Mouse
 opt.mouse = "a"
@@ -52,3 +68,13 @@ opt.completeopt = { "menu", "menuone", "noselect" }
 opt.wrap = false
 opt.showmode = false
 opt.backspace = { "indent", "eol", "start" }
+
+-- Auto-reload files changed externally
+opt.autoread = true
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
+  command = "checktime",
+  desc = "Check for external file changes",
+})
+
+-- Terminal mode: use Esc to exit to normal mode
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })

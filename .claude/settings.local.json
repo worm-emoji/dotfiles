@@ -1,15 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:github.com)",
-      "Bash(ln:*)",
-      "Bash(nvim --headless +\"checkhealth which-key\" +\"redir! > /tmp/wk.txt | silent 1,$print | redir END\" +qa)",
-      "Bash(cat:*)",
-      "Bash(nvim:*)",
-      "Bash(prettierd:*)",
-      "Bash(prettier:*)",
-      "Bash(~/.local/share/nvim/mason/bin/prettierd status:*)",
-      "Bash(~/.local/share/nvim/mason/bin/prettierd:*)"
+      "WebFetch(domain:ghostty.org)",
+      "WebSearch",
+      "WebFetch(domain:github.com)"
     ]
   }
 }

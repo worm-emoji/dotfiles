@@ -1,7 +1,7 @@
 return {
   {
     "nvim-telescope/telescope.nvim",
-    branch = "0.1.x",
+    tag = "0.1.8",
     dependencies = {
       "nvim-lua/plenary.nvim",
       {
@@ -29,6 +29,9 @@ return {
 
       telescope.setup({
         defaults = {
+          preview = {
+            treesitter = false,
+          },
           prompt_prefix = "   ",
           selection_caret = "  ",
           path_display = { "truncate" },
