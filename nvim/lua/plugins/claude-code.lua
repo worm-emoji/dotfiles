@@ -1,32 +1,36 @@
 return {
+  -- Snacks.nvim dependency (required by claudecode.nvim)
   {
-    "greggh/claude-code.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
+    "folke/snacks.nvim",
+    priority = 1000,
+    lazy = false,
+    opts = {},
+  },
+
+  -- Claude Code integration
+  {
+    "coder/claudecode.nvim",
+    dependencies = { "folke/snacks.nvim" },
+    config = true,
+    opts = {
+      terminal_cmd = "claude",
+      -- Terminal configuration
+      terminal = {
+        split_side = "right",
+        split_width_percentage = 0.40,
+      },
     },
     keys = {
-      { "<leader>cc", "<cmd>ClaudeCode<CR>", desc = "Toggle Claude Code" },
-      { "<leader>cC", "<cmd>ClaudeCodeContinue<CR>", desc = "Claude Code continue" },
-      { "<leader>cr", "<cmd>ClaudeCodeResume<CR>", desc = "Claude Code resume" },
+      { "<leader>cc", "<cmd>ClaudeCode<cr>", desc = "Toggle Claude" },
+      { "<leader>cf", "<cmd>ClaudeCodeFocus<cr>", desc = "Focus Claude" },
+      { "<leader>cr", "<cmd>ClaudeCode --resume<cr>", desc = "Resume Claude" },
+      { "<leader>cC", "<cmd>ClaudeCode --continue<cr>", desc = "Continue Claude" },
+      { "<leader>cm", "<cmd>ClaudeCodeSelectModel<cr>", desc = "Select model" },
+      { "<leader>cb", "<cmd>ClaudeCodeAdd %<cr>", desc = "Add current buffer" },
+      { "<leader>cs", "<cmd>ClaudeCodeSend<cr>", mode = "v", desc = "Send selection" },
+      { "<leader>cs", "<cmd>ClaudeCodeTreeAdd<cr>", ft = { "NvimTree", "neo-tree", "oil" }, desc = "Add file" },
+      { "<leader>ca", "<cmd>ClaudeCodeDiffAccept<cr>", desc = "Accept diff" },
+      { "<leader>cd", "<cmd>ClaudeCodeDiffDeny<cr>", desc = "Reject diff" },
     },
-    cmd = { "ClaudeCode", "ClaudeCodeContinue", "ClaudeCodeResume" },
-    config = function()
-      require("claude-code").setup({
-        window = {
-          split_ratio = 0.4,
-          position = "botright", -- botright, topleft, or float
-          enter_insert = true,
-          hide_numbers = true,
-          hide_signcolumn = true,
-        },
-        git = {
-          use_git_root = true,
-        },
-        refresh = {
-          enable = true,
-          updatetime = 100,
-        },
-      })
-    end,
   },
 }

@@ -97,6 +97,8 @@ return {
     keys = {
       { "<leader>gg", "<cmd>Git<CR>", desc = "Git status (fugitive)" },
       { "<leader>gb", "<cmd>Git blame<CR>", desc = "Git blame" },
+      { "<leader>gy", "<cmd>.GBrowse!<CR>", desc = "Copy GitHub URL", mode = "n" },
+      { "<leader>gy", ":'<,'>GBrowse!<CR>", desc = "Copy GitHub URL (selection)", mode = "v" },
     },
   },
 
