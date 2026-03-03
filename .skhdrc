@@ -39,6 +39,9 @@ ctrl + alt + shift - right : yabai -m window --space next; yabai -m space --focu
 # Restart yabai
 alt - 0 : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 
+# Obsidian centered popover toggle (press again to dismiss)
+alt - o : "$HOME/r/dotfiles/.yabai-obsidian-popover.sh" toggle
+
 .blacklist [
     "simulator"
 ]
