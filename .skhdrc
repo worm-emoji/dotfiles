@@ -1,110 +1,43 @@
-# leader
-:: leader @
-0x32 ; leader
-# double tap backtick to get a literal backtick
-leader < 0x32 -> ; default
-# escape gets you out of a mode
-leader < escape ; default
+# Toggle fullscreen
+alt - return : yabai -m window --toggle zoom-fullscreen
 
-# focus space
-leader < ctrl - z :\
-  yabai -m space --focus prev;\
-  skhd -k "escape"
-leader < ctrl - c :\
-  yabai -m space --focus next;\
-  skhd -k "escape"
+# Toggle float/tile
+alt - t : yabai -m window --toggle float
 
-# <leader>= : equalize sizes
-leader < 0x18 :\
-  yabai -m space --balance;\
-  skhd -k "escape"
+# Toggle bsp/stack layout
+alt - f : yabai -m space --layout stack 
+alt - b : yabai -m space --layout bsp
 
-# swap window
-leader < shift - h :\
-  yabai -m window --swap west;\
-  skhd -k "escape"
-leader < shift - j :\
-  yabai -m window --swap south;\
-  skhd -k "escape"
-leader < shift - k :\
-  yabai -m window --swap north;\
-  skhd -k "escape"
-leader < shift - l :\
-  yabai -m window --swap east;\
-  skhd -k "escape"
+# Equalize tiling sizes
+alt - 0x18 : yabai -m space --balance
 
-# move window
-leader < alt - h :\
-  yabai -m window --warp west;\
-  skhd -k "escape"
-leader < alt - j :\
-  yabai -m window --warp south;\
-  skhd -k "escape"
-leader < alt - k :\
-  yabai -m window --warp north;\
-  skhd -k "escape"
-leader < alt - l :\
-  yabai -m window --warp east;\
-  skhd -k "escape"
-
-# mirror tree y-axis
-leader < y :\
-  yabai -m space --mirror y-axis;\
-  skhd -k "escape"
-
-# mirror tree x-axis
-leader < x :\
-  yabai -m space --mirror x-axis;\
-  skhd -k "escape"
-
-# focus windows
-leader < h : yabai -m window --focus west;\
-             skhd -k "escape"
-leader < j : yabai -m window --focus south;\
-             skhd -k "escape"
-leader < k : yabai -m window --focus north;\
-             skhd -k "escape"
-leader < l : yabai -m window --focus east;\
-             skhd -k "escape"
-
-leader < f : \
-  yabai -m space --layout stack; \
-  skhd -k "escape"
-leader < b : \
-  yabai -m space --layout bsp; \
-  skhd -k "escape"
-
-cmd + alt - g : shortcuts run "toggle grayscale"
-alt - 9 : /usr/bin/osascript -e 'do shell script "killall coreaudiod 2>&1" with administrator privileges'
-alt - 0 : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
-
-
-# focus specific window
-cmd + shift - a : yabai -m query --windows | jq '.[] | select(.app=="Alacritty").space' | xargs yabai -m space --focus || yabai -m space --focus recent
-cmd + shift - d : yabai -m query --windows | jq '.[] | select(.app=="Slack" or .app =="Discord").space' | xargs yabai -m space --focus || yabai -m space --focus recent
-cmd + shift - s : yabai -m query --windows | jq '.[] | select(.app=="Firefox" or .app =="Safari").space' | xargs yabai -m space --focus || yabai -m space --focus recent
-cmd + shift - w : yabai -m query --windows | jq '.[] | select(.app=="Texts").space' | xargs yabai -m space --focus || yabai -m space --focus recent
-cmd + shift - l : yabai -m query --windows | jq '.[] | select(.app=="Music" or .app =="Sonos").space' | xargs yabai -m space --focus || yabai -m space --focus recent
-cmd + shift - m : yabai -m query --windows | jq '.[] | select(.app=="Mimestream").space' | xargs yabai -m space --focus || yabai -m space --focus recent
-cmd + shift - x : yabai -m query --windows | jq '.[] | select(.app=="Xcode" or .app =="Code").space' | xargs yabai -m space --focus || yabai -m space --focus recent
-cmd + shift - c : yabai -m query --windows | jq '.[] | select(.app=="Texts").space' | xargs yabai -m space --focus || yabai -m space --focus recent
+# Focus neighbors
+ctrl + alt - h : yabai -m window --focus west
+ctrl + alt - j : yabai -m window --focus south
+ctrl + alt - k : yabai -m window --focus north
+ctrl + alt - l : yabai -m window --focus east
 
 # Space navigation
-cmd + shift - 1 : yabai -m space --focus 1
-cmd + shift - 2 : yabai -m space --focus 2
-cmd + shift - 3 : yabai -m space --focus 3
-cmd + shift - 4 : yabai -m space --focus 4
-cmd + shift - 5 : yabai -m space --focus 5
-cmd + shift - 6 : yabai -m space --focus 6
-cmd + shift - 7 : yabai -m space --focus 7
-cmd + shift - 8 : yabai -m space --focus 8
-cmd + shift - 9 : yabai -m space --focus 9
-cmd + shift - 0 : yabai -m space --focus 10
+ctrl + alt - left  : yabai -m space --focus prev || yabai -m space --focus last
+ctrl + alt - right : yabai -m space --focus next || yabai -m space --focus first
 
-cmd + shift - left : yabai -m space --focus prev || yabai -m space --focus last
-cmd + shift - right : yabai -m space --focus next || yabai -m space --focus first
-cmd + shift - down : yabai -m space --destroy
-cmd + shift - up : yabai -m space --create
+# Jump to space
+alt - 1 : yabai -m space --focus 1
+alt - 2 : yabai -m space --focus 2
+alt - 3 : yabai -m space --focus 3
+alt - 4 : yabai -m space --focus 4
+alt - 5 : yabai -m space --focus 5
+alt - 6 : yabai -m space --focus 6
+alt - 7 : yabai -m space --focus 7
+alt - 8 : yabai -m space --focus 8
+alt - 9 : yabai -m space --focus 9
+
+# Move window to prev/next space
+ctrl + alt + shift - left  : yabai -m window --space prev; yabai -m space --focus prev
+ctrl + alt + shift - right : yabai -m window --space next; yabai -m space --focus next
+
+# Restart yabai
+alt - 0 : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 
 .blacklist [
     "simulator"

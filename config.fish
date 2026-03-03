@@ -294,3 +294,6 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # Amp CLI
 export PATH="/Users/worm/.amp/bin:$PATH"
+
+# opencode
+fish_add_path /Users/ylukem/.opencode/bin

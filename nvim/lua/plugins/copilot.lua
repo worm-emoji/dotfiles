@@ -7,8 +7,8 @@ return {
     -- Disable default Tab mapping to avoid conflict with nvim-cmp
     vim.g.copilot_no_tab_map = true
 
-    -- Use Ctrl-J to accept Copilot suggestions instead
-    vim.keymap.set("i", "<C-j>", 'copilot#Accept("<CR>")', {
+    -- Use Right arrow to accept Copilot suggestions instead
+    vim.keymap.set("i", "<Right>", 'copilot#Accept("<CR>")', {
       expr = true,
       replace_keycodes = false,
       silent = true,
