@@ -51,7 +51,6 @@ yabai -m rule --add \
   app="^Screen\$" \
   manage=off
 yabai -m rule --add app="^Frame\$" manage=off
-yabai -m rule --add app="^Obsidian.*$" manage=off
 
 
 # Arc Browser specific
@@ -66,6 +65,3 @@ yabai -m signal --add event=display_removed action="$AUTO_LAYOUT_SCRIPT"
 yabai -m signal --add event=display_moved action="$AUTO_LAYOUT_SCRIPT"
 yabai -m signal --add event=display_resized action="$AUTO_LAYOUT_SCRIPT"
 yabai -m signal --add event=system_woke action="$AUTO_LAYOUT_SCRIPT"
-
-# Force new Obsidian windows to float even if a previous tiled instance exists.
-yabai -m signal --add event=window_created action="$HOME/r/dotfiles/.yabai-obsidian-popover.sh --on-window-created"

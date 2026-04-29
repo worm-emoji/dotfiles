@@ -74,6 +74,7 @@ function f
 end
 
 alias t todo
+alias wm "cd '/Users/ylukem/Library/Mobile Documents/iCloud~md~obsidian/Documents/Personal/Wine'"
 
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
 
